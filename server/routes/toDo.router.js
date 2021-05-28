@@ -1,17 +1,13 @@
-const { Router } = require('express');
+//const { Router } = require('express');
 const express = require('express');
 const toDoRouter = express.Router();
-// DB CONNECTION
+
+
 const pg = require('pg');
-//pg configuration
 const Pool = pg.Pool;
 
-//FOR USE IN HEROKU!
-//const pool = require('../modules/pool')
-
-
 const pool = new Pool({
-    database: 'weekend-to-do-app', // THIS CHANGES BY PROJECT
+    database: 'weekend-to-do-app',
     host: 'localhost',
     port: 5432,
 })

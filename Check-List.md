@@ -1,15 +1,15 @@
 //SETUP
 []Create folders and proper files
-    []server
+    [x]server
         []Public
-            []scripts
-            []styles
-            []vendors
-            []index.html
+            [x]scripts
+            [x]styles
+            [x]vendors
+            [x]index.html
         []routes
             []router.js
-        []server.js
-    []gitignore
+        [x]server.js
+    [x]gitignore
 []Set up server
     []PG
     []Express
@@ -17,7 +17,7 @@
     []Table Creation
     []Table columns
     []Export all DB info to independent file
-    []Name server weekend-to-do-app
+    []Name DB weekend-to-do-app
 
 
 //Need to CODE

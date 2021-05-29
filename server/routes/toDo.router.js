@@ -47,13 +47,13 @@ toDoRouter.post('/', (req, res) => {
 
 //PUT
 toDoRouter.put('/:id', (req, res) => {
-    let taskId = req.params.id;//setting Koala id dynamically
-    console.log('taskId in koalaRouter', taskId);
+    let taskId = req.params.id;//setting task id dynamically
+    console.log('taskId in taskRouter', taskId);
     
-    let taskPriority = req.body.task_priority//sets variable to transferability of koala
+    let taskComplete = req.body.task_complete//sets variable to transferability of koala
     console.log(req.body);
-    console.log(taskPriority);
-    let queryString = 'UPDATE "tasks" SET "task_complete"='true' WHERE "tasks".id=$1;';
+    console.log(taskComplete);
+    let queryString = `UPDATE "tasks" SET "task_complete"='true' WHERE "tasks".id=$1;`;
     
     pool.query(queryString, [taskId])
         .then(response => {

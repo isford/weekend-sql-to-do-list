@@ -5,6 +5,8 @@ function handleReady(){
     console.log('JQ Loaded');
     setUpClickListeners();
     getTasks();
+
+    $('#viewTasks').on('click', '.completeButton', handleCompleteClick)
 }
 
 //Click Listeners
@@ -22,6 +24,9 @@ function setUpClickListeners(){
 
     //Delete Task
     $('#viewTasks').on('click', '.deleteButton', deleteTaskHandler)
+
+    //UPDATE/COMPLETE/PUT Task
+
 }
 
 //Client Side GET
@@ -88,4 +93,26 @@ function deleteTask(taskId){
     }).catch(err => {
         alert('There was a problem deleting that task, try again', err);
     });
+}
+
+//handle Complete
+function handleCompleteClick(){
+    completeClick($(this).data("id"));
+}
+
+//Complete Task PUT
+function completeClick(taskId){
+    console.log(`In completeClick${taskId}`);
+    $.ajax({
+        method: "PUT",
+        url: `/tasks/${taskId}`,
+        data: {
+            task_priority: `${taskId}`
+        }
+    }).then(response => {
+        console.log('Task complete');
+        getTasks();
+    }).catch(err => {
+        console.log(err);
+    })
 }

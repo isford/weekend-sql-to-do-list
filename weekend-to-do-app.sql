@@ -1,6 +1,6 @@
 CREATE TABLE "tasks" (
 "id" SERIAL PRIMARY KEY,
-"task_name" VARCHAR (250) NOT NULL,
+"task_name" VARCHAR (250),
 "task_priority" VARCHAR (10)
 );
 

@@ -2,8 +2,22 @@ console.log ('JS Loaded');
 $(document).ready(handleReady)
 
 function handleReady(){
-    console.log('JQ Loaded')
+    console.log('JQ Loaded');
+    setUpClickListeners();
     getTasks();
+}
+
+//Click Listeners
+function setUpClickListeners(){
+    $('#submit').on('click', function (){
+        console.log('in submitButton on click');
+        let taskToSend = {
+            taskName: $('#taskName').val(),
+            taskPriority: $('#taskPriority').val(),
+        };
+
+        saveTask(taskToSend);
+    });
 }
 
 //Client Side GET

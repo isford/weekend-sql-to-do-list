@@ -35,7 +35,7 @@ toDoRouter.post('/', (req, res) => {
     let queryText = `INSERT INTO "tasks" ("task_name", "task_priority")
         VALUES ($1, $2)`
 
-    pool.query(queryText, [req.body.task_name, req.body.task_priority])
+    pool.query(queryText, [req.body.taskName, req.body.taskPriority])
     .then ((result) => {
         res.sendStatus(201);
     }).catch(err => {

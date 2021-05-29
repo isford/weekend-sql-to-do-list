@@ -14,17 +14,20 @@
     [x]PG
     [x]Express
 []DB Set
-    []Table Creation
-    []Table columns
+    [x]Table Creation
+    [x]Table columns
     []Export all DB info to independent file
-    []Name DB weekend-to-do-app
+    [x]Name DB weekend-to-do-app
+    []Make a default setting for Priority
+    []Order Statements by Priority??
 
 
 //Need to CODE
 []Data Posted to DB
     []POST
 []Data GET from DB
-    []GET
+    []GET router side
+    []GET client side
 []Data Update
     []PUT
     []Complete Button

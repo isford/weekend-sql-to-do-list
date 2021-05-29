@@ -23,12 +23,12 @@
 
 
 //Need to CODE
-[]Data Posted to DB
-    []POST
-[]Data GET from DB
+[x]Data Posted to DB
+    [x]POST
+[x]Data GET from DB
     [x]GET router side
     [x]GET client side
-    []Render Tasks function
+    [x]Render Tasks function
 []Data Update
     []PUT
     []Complete Button

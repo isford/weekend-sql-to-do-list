@@ -9,6 +9,7 @@ function handleReady(){
 
 //Click Listeners
 function setUpClickListeners(){
+    //Add Task
     $('#submit').on('click', function (){
         console.log('in submitButton on click');
         let taskToSend = {
@@ -18,6 +19,9 @@ function setUpClickListeners(){
 
         saveTask(taskToSend);
     });
+
+    //Delete Task
+    $('#viewTasks').on('click', '.deleteButton', deleteTaskHandler)
 }
 
 //Client Side GET
@@ -48,7 +52,7 @@ function renderTasks(tasks){
             <td>${task.task_name}</td>
             <td>${task.task_priority}</td>
             <td><button class="deleteButton btn btn-danger" data-id="${task.id}">Delete</button></td>
-            <td><button class="complete btn btn-info" data-id="${task.id}"">Task Complete!</button></td>
+            <td><button class="completeButton btn btn-info" data-id="${task.id}"">Task Complete!</button></td>
         </tr>
         `);
     };
@@ -67,3 +71,21 @@ function saveTask(newTask){
         getTasks();
     });
 }//END POST
+
+//Delete Handler
+function deleteTaskHandler(){
+    deleteTask($(this).data("id"))
+}
+
+//DELETE Task
+function deleteTask(taskId){
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`
+    }).then(response => {
+        console.log(`deleted Task with id of ${taskId}`);
+        getTasks();
+    }).catch(err => {
+        alert('There was a problem deleting that task, try again', err);
+    });
+}

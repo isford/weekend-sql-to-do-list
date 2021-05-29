@@ -49,5 +49,16 @@ toDoRouter.post('/', (req, res) => {
 
 
 //DELETE
-
+toDoRouter.delete('/:id', (req, res) => {
+    const taskToDelete = req.params.id;
+    const queryText = `DELETE FROM "tasks" WHERE "tasks".id = $1`;
+    pool.query(queryText, [taskToDelete])
+    .then((response) => {
+        console.log(`We deleted the task with id ${taskToDelete}`);
+        res.sendStatus(200);
+    }).catch((err) => {
+        console.log('Something went wrong in the toDoRouter.delete', err);
+        res.sendStatus(500)
+    });
+});//END DELETE
 module.exports = toDoRouter;

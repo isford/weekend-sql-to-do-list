@@ -12,16 +12,39 @@
     <link rel="stylesheet" href="./vendors/bootstrap.css.map">
     <title>To-Do List</title>
 </head>
+<body>
+
 <h1>To-Do List</h1>
 
-<body>
-    <table>
+<!-- TABLE INPUT FIELD -->
 
+<h3>New Task:</h3>
+<input type="text" id="task" placeholder="Enter Task Here">
+<!-- <form> -->
+    <label for="priority">Choose priority level:</label>
+    <select name="cars" id="cars">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    <!-- <br><br> -->
+    <!-- <input type="submit" value="Submit"> -->
+
+    <button id = "submit">Submit New Task</button>
+<!-- </form> -->
+
+<!-- END TABLE INPUT FIELD -->
+
+    <!-- TABLE INFO -->
+
+    <table>
         <thead>
             <th>Task</th>
             <th>Completed</th>
             <th>Delete</th>
         </thead>
+        <!-- END TABLE INFO -->
+        <!-- PLACEHOLDER INFO -->
         <tbody>
             <tr>
                 <td>Make this project done and beautiful</td>
@@ -29,6 +52,7 @@
                 <td><button id = "delete">Delete</button></td>
             </tr>
         </tbody>
+        <!-- END PLACEHOLDER INFO -->
     </table>
 </body>
 

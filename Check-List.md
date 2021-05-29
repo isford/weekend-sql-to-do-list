@@ -1,18 +1,18 @@
 //SETUP
-[]Create folders and proper files
+[x]Create folders and proper files
     [x]server
-        []Public
+        [x]Public
             [x]scripts
             [x]styles
             [x]vendors
             [x]index.html
-        []routes
-            []router.js
+        [x]routes
+            [x]router.js
         [x]server.js
     [x]gitignore
-[]Set up server
-    []PG
-    []Express
+[x]Set up server
+    [x]PG
+    [x]Express
 []DB Set
     []Table Creation
     []Table columns

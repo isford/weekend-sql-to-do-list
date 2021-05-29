@@ -26,8 +26,9 @@
 []Data Posted to DB
     []POST
 []Data GET from DB
-    []GET router side
-    []GET client side
+    [x]GET router side
+    [x]GET client side
+    []Render Tasks function
 []Data Update
     []PUT
     []Complete Button

@@ -46,7 +46,7 @@ function saveTask(newTask){
 
     $.ajax({
         type: 'POST',
-        url: '/koalas',
+        url: '/tasks',
         data: newTask,
     }).then( function (response) {
         $('#taskName').val('');

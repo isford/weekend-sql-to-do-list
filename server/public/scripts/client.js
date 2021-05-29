@@ -19,7 +19,7 @@ function getTasks(){
     }).catch(function(error) {
         console.log('Error in GET on client.js', error)
     })
-}
+}//end GET
 
 //Render/APPEND tasks to DOM
 function renderTasks(tasks){
@@ -38,4 +38,18 @@ function renderTasks(tasks){
         </tr>
         `);
     };
-}
+}//end RENDER
+
+//Client Side POST
+function saveTask(newTask){
+    console.log('In client newTask', newTask);
+
+    $.ajax({
+        type: 'POST',
+        url: '/koalas',
+        data: newTask,
+    }).then( function (response) {
+        $('#taskName').val('');
+        getTasks();
+    });
+}//END POST

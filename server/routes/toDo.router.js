@@ -19,7 +19,7 @@ pool.on('error', (error) => {
 
 //GET
 toDoRouter.get('/', (req, res) => {
-    let queryText = 'SELECT * FROM "tasks";';
+    let queryText = `SELECT * FROM "tasks";`;
     pool.query(queryText).then(result => {
         res.send(result.rows);
     }).catch(error => {
@@ -28,6 +28,21 @@ toDoRouter.get('/', (req, res) => {
 });// end toDoRouter.get
 
 //POST
+toDoRouter.post('/', (req, res) => {
+    console.log('In toDoRouter.post', req.body);
+
+    let queryText = `INSERT INTO "tasks" ("task_name", "task_priority")
+        VALUES ($1, $2)`
+
+    pool.query(queryText, [req.body.task_name, req.body.task_priority])
+    .then ((result) => {
+        res.sendStatus(201);
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    })
+});
+
 
 //PUT
 

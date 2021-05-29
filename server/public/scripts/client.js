@@ -31,7 +31,7 @@ function setUpClickListeners(){
 
 //Client Side GET
 function getTasks(){
-    console.log('In getTasks');
+    //console.log('In getTasks');
 
     $.ajax({
         method: 'GET',
@@ -54,7 +54,7 @@ function renderTasks(tasks){
 
         $('#viewTasks').append(`
         <tr>
-            <td>${task.task_name}</td>
+            <td scope="row" >${task.task_name}</td>
             <td>${task.task_priority}</td>
             <td><button class="deleteButton btn btn-danger" data-id="${task.id}">Delete</button></td>
             <td><button class="completeButton btn btn-info" data-id="${task.id}" data-task_complete="${task.task_complete}">Task Complete!</button></td>

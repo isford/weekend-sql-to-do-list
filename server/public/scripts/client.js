@@ -18,7 +18,7 @@ function setUpClickListeners(){
             taskName: $('#taskName').val(),
             taskPriority: $('#taskPriority').val(),
         };
-
+        swal("Great!", "You added a new task!", "success");
         saveTask(taskToSend);
     });
 
@@ -79,7 +79,26 @@ function saveTask(newTask){
 
 //Delete Handler
 function deleteTaskHandler(){
-    deleteTask($(this).data("id"))
+
+swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this task again!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Your task is gone forever!...Hope you know what you are doing...", {
+      icon: "success",
+    });
+    deleteTask($(this).data("id"));
+  } else {
+    swal("Your task is safe to complete later!");
+  }
+});
+
+    // deleteTask($(this).data("id"))
 }
 
 //DELETE Task
@@ -98,6 +117,7 @@ function deleteTask(taskId){
 //handle Complete
 function handleCompleteClick(){
     completeClick($(this).data("id"), "true");
+    swal("Great!", "Another one bites the dust!!", "success");
 }
 
 //Complete Task PUT

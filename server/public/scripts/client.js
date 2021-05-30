@@ -24,7 +24,6 @@ function setUpClickListeners(){
 
     //Delete Task
     $('#viewTasks').on('click', '.deleteButton', deleteTaskHandler)
-
     //UPDATE/COMPLETE/PUT Task
 
 }
@@ -51,15 +50,16 @@ function renderTasks(tasks){
     for (let i = 0; i < tasks.length; i++){
         let task = tasks[i];
         console.log('in renderTasks', task);
-
         $('#viewTasks').append(`
-        <tr>
+        <tr class = "changeMe${task.id}">
             <td scope="row" >${task.task_name}</td>
             <td>${task.task_priority}</td>
             <td><button class="deleteButton btn btn-danger" data-id="${task.id}">Delete</button></td>
             <td><button class="completeButton btn btn-info" data-id="${task.id}" data-task_complete="${task.task_complete}">Task Complete!</button></td>
         </tr>
         `);
+       if(task.task_complete == true) {
+            $(`.changeMe${task.id}`).addClass("turnGreen")}
     };
 }//end RENDER
 
@@ -97,7 +97,7 @@ function deleteTask(taskId){
 
 //handle Complete
 function handleCompleteClick(){
-    completeClick($(this).data("id"), "false");
+    completeClick($(this).data("id"), "true");
 }
 
 //Complete Task PUT

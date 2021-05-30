@@ -9,3 +9,6 @@ INSERT INTO "tasks"
 VALUES 
 	('Mek it gud', 'Medium'),
 	('Then mek it bettuh', 'Low');
+
+ALTER TABLE "tasks"
+ADD "task_complete" BOOLEAN DEFAULT 'false';

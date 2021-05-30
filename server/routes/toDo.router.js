@@ -54,7 +54,7 @@ toDoRouter.put('/:id', (req, res) => {
     console.log(req.body);
     console.log(taskComplete);
     let queryString = `UPDATE "tasks" SET "task_complete"='true' WHERE "tasks".id=$1;`;
-    
+  
     pool.query(queryString, [taskId])
         .then(response => {
             console.log(response.rowCount);

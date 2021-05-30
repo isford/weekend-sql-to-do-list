@@ -13,13 +13,12 @@
 [x]Set up server
     [x]PG
     [x]Express
-[]DB Set
+[x]DB Set
     [x]Table Creation
     [x]Table columns
-    []Export all DB info to independent file
+    [x]Export all DB info to independent file
     [x]Name DB weekend-to-do-app
-    []Make a default setting for Priority
-    []Order Statements by Priority??
+  
 
 
 //Need to CODE
@@ -29,19 +28,19 @@
     [x]GET router side
     [x]GET client side
     [x]Render Tasks function
-[]Data Update
-    []PUT
-    []Complete Button
-[]Data Delete
-    []Delete from DB
+[x]Data Update
+    [x]PUT
+    []xComplete Button
+[x]Data Delete
+    [x]Delete from DB
 
 
 //STYLING
     []Looks professional
-        []BOOTSTRAP
+        [x]BOOTSTRAP
     [] Background color of page
     [] Font Family and Size
-    [] Text color and background change depending on if it has been completed
+    [x] Text color and background change depending on if it has been completed
 
 
 

@@ -20,41 +20,27 @@
 
 <h3>New Task:</h3>
 <input type="text" id="taskName" placeholder="Enter Task Here">
-<!-- <form> -->
     <label for="priority">Choose priority level:</label>
-    <select id="taskPriority">
+    <select class="btn btn-primary dropdown-toggle" id="taskPriority">
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
     </select>
-    <!-- <br><br> -->
-    <!-- <input type="submit" value="Submit"> -->
-
-    <button id = "submit">Submit New Task</button>
-<!-- </form> -->
+    <button class="btn btn-primary" id="submit">Submit New Task</button>
 
 <!-- END TABLE INPUT FIELD -->
 
     <!-- TABLE INFO -->
-
     <table class="table table-secondary">
         <thead class = "table-secondary">
             <th scope="col">Task</th>
             <th scope="col">Priority</th>
             <th scope="col">Delete</th>
             <th scope="col">Task Done?</th>
-             <!-- <th>Finish the Task</th> -->
         </thead>
         <!-- END TABLE INFO -->
-        <!-- PLACEHOLDER INFO -->
         <tbody id = "viewTasks">
-            <!-- <tr>
-                <td>Make this project done and beautiful</td>
-                <td><button id = "complete">Complete</button></td>
-                <td><button id = "delete">Delete</button></td>
-            </tr> -->
         </tbody>
-        <!-- END PLACEHOLDER INFO -->
     </table>
 </body>
 

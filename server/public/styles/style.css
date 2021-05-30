@@ -1,3 +1,29 @@
 .turnGreen{
     color: green;
+    font-size: large;
+}
+
+.textEnter{
+    padding-left: 2rem;
+    margin-left: 2em;
+}
+
+h3{
+    margin-left: 2em;
+}
+
+#grad1 {
+    height: 200px;
+    background-color: rgb(132, 159, 209);
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgb(199, 140, 207), rgb(47, 162, 216));
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #1834d3;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    background-color: rgb(117, 202, 241, .2);
 }
